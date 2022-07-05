@@ -326,6 +326,10 @@ img#rocket {
 }
 
 /* SKILLS */
+.skills{
+    overflow: hidden;
+}
+
 .skills__body {
     margin-top: 4rem;
     display: grid;
@@ -338,7 +342,7 @@ img#rocket {
 }
 
 .skill__gradient {
-    padding: 2px 4px;
+    padding: 4px;
     margin: auto;
     height: 50px;
     width: 200px;
