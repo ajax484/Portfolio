@@ -52,7 +52,7 @@ h3 {
 
 body {
     /* fixed background image */
-    background-image: url(../img/space\ bg.jpg);
+    background-image: url(../img/space_bg.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
