@@ -9,12 +9,14 @@
 
 @font-face {
     font-family: spacebar;
+    font-display: swap;
     src: url(../fonts/SPACEBAR.ttf);
 }
 
 @font-face {
-    font-family: spaceregular;
-    src: url(../fonts/SPACEREGULAR.otf);
+    font-family: poppinsregular;
+    font-display: swap;
+    src: url(../fonts/POPPINSREGULAR.ttf);
 }
 
 * {
@@ -32,7 +34,7 @@ h1, h2, h3, li {
 }
 
 p {
-    font-family: spaceregular;
+    font-family: poppinsregular;
 }
 
 h1 {
@@ -320,7 +322,7 @@ img#rocket {
 }
 
 .info__body {
-    font-family: spaceregular;
+    font-family: poppinsregular;
     text-align: center;
     overflow-x: hidden;
 }
@@ -534,7 +536,7 @@ fieldset {
 #contact button[type="submit"] {
     cursor: pointer;
     width: 100%;
-    font-family: spaceregular;
+    font-family: poppinsregular;
     border: none;
     border-radius: 5px;
     color: #FFF;
@@ -561,22 +563,22 @@ fieldset {
 
 ::-webkit-input-placeholder {
     color: #888;
-    font-family: spaceregular;
+    font-family: poppinsregular;
 }
 
 :-moz-placeholder {
     color: #888;
-    font-family: spaceregular;
+    font-family: poppinsregular;
 }
 
 ::-moz-placeholder {
     color: #888;
-    font-family: spaceregular;
+    font-family: poppinsregular;
 }
 
 :-ms-input-placeholder {
     color: #888;
-    font-family: spaceregular;
+    font-family: poppinsregular;
 }
 
 
