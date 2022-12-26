@@ -1,11 +1,16 @@
 const tl = gsap.timeline();
 const opSeqcontainer = document.querySelector('#opening-sequence-container');
+const skipButton = document.querySelector('#skip-button');
+const skipButtonOuter = document.querySelector('.skip-button__outer');
 const rocket = document.querySelector('#rocket');
 const container = document.querySelector('#container');
 const menuToggle = document.querySelector('.menu-toggle');
 const avatar = document.querySelector('.img-container');
 const textContainer = document.querySelector('.text-container');
-const arrowDown = document.querySelector('.arrow');
+const arrowDown = document.querySelector('#down-to-content');
+const backToTopButton = document.querySelector('#back-to-top');
+const disabledLink = document.querySelector('.disabled-link');
+
 let rocketVib = -1;
 
 
@@ -32,6 +37,7 @@ window.onload = () => {
         .set([rocket, container], { autoAlpha: 1, display: 'block' })
         .set(opSeqcontainer, { display: 'none', delay: .5 })
         .addLabel('seq2')
+        .set(skipButtonOuter, { autoAlpha: 0 }, 'seq2')
         .to(rocket, { duration: 0.1, x: "-=5", yoyo: true, repeat: rocketVib }, 'seq2')
         .to(rocket, { duration: 2, y: "-120vh" }, 'seq2')
         .from(container, { duration: 2, y: "120vh" }, 'seq2')
@@ -44,7 +50,7 @@ window.onload = () => {
                 ScrollTrigger.refresh();
             }
         }, 'seq2+=3.5')
-        .set("body", {overflowY: 'scroll'}, 'seq2+=3.5')
+        .set("body", { overflowY: 'scroll' }, 'seq2+=3.5')
 
     //toggle sidebar menu
     menuToggle.addEventListener('click', function () {
@@ -58,6 +64,16 @@ window.onload = () => {
             setTimeout(function () { nav.classList.toggle('mobile-nav') }, 1100)
         }
     })
+
+    //skip animation
+    skipButton.addEventListener('click', function () {
+        tl.seek('-=0', false);
+    });
+
+    // When the user clicks on the button, scroll to the top of the document
+    backToTopButton.onclick = function () {
+        document.querySelector('#container').scrollIntoView({ behavior: 'smooth' });
+    };
 
     //scroll to section
     Navlist.forEach((item) => {
@@ -100,4 +116,19 @@ window.onload = () => {
         })
     });
 
+    disabledLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        alert('sorry that\'s private 😉');
+    })
+
 }
+
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        backToTopButton.style.display = 'block';
+    } else {
+        backToTopButton.style.display = 'none';
+    }
+};

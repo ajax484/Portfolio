@@ -96,6 +96,34 @@ section:not(:first-child), section:not(:last-child) {
     animation: animatedgradient 2s ease infinite;
 }
 
+.skip-button__outer {
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 10000;
+    position: absolute;
+    top: 75px;
+    right: 75px;
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    background-size: 400% 400%;
+}
+
+.skip-button__inner {
+    background-color: #000;
+    width: 80px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    padding: 5px;
+}
+
+.skip-button__inner:hover {
+    cursor: pointer;
+}
+
+.skip-button__inner:active {
+    background-color: transparent;
+}
+
 img#rocket {
     display: none;
     position: absolute;
@@ -221,6 +249,14 @@ img#rocket {
     transform: translateY(-8px) rotate(-45deg);
 }
 
+/* BACK TO TOP */
+#back-to-top {
+    position: fixed;
+    top: 80%;
+    right: 50px;
+    display: none;
+}
+
 /* CARD */
 .card-container {
     height: 100vh;
@@ -256,19 +292,23 @@ img#rocket {
 }
 
 /* downward arrow */
-.arrow {
+.arrow-container {
     padding: 4px;
     margin: auto;
     height: 60px;
     width: 60px;
     border-radius: 50%;
-    position: absolute;
-    top: calc(100% - 40px);
     background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
     background-size: 400% 400%;
     -webkit-animation: animatedgradient 5s ease infinite, bounce 1s both ease-in-out infinite;
     -moz-animation: animatedgradient 5s ease infinite, bounce 1s both ease-in-out infinite;
     animation: animatedgradient 5s ease infinite, bounce 1s both ease-in-out infinite;
+    z-index: 10000;
+}
+
+.card-arrow {
+    position: absolute;
+    top: calc(100% - 40px);
 }
 
 /* .arrow:hover {
@@ -277,7 +317,7 @@ img#rocket {
     -webkit-animation-play-state: paused;
 } */
 
-.arrow-down {
+.arrow {
     display: grid;
     place-items: center;
     border-radius: 50%;
@@ -328,7 +368,7 @@ img#rocket {
 }
 
 /* SKILLS */
-.skills{
+.skills {
     overflow: hidden;
 }
 
@@ -344,10 +384,10 @@ img#rocket {
 }
 
 .skill__gradient {
-    padding: 4px;
+    padding: 5px;
     margin: auto;
-    height: 50px;
     width: 200px;
+    border-radius: 5px;
 }
 
 .skill__card {
